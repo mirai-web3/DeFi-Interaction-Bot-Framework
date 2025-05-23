@@ -219,3 +219,113 @@ Please provide recommendations that align with our framework principles.
 ```
 
 These conversation starters will help you get maximum value from your Claude Project by providing clear context and specific objectives for each interaction! 🎯
+
+Here are simple, direct conversation starters for your **DeFi Interaction Bot Framework**:
+
+## **🚀 New Bot Creation**
+
+```
+Build a bot for [Protocol Name] on [Network] that does:
+- [interaction 1]
+- [interaction 2] 
+- [interaction 3]
+
+Contract addresses: [list if known]
+```
+
+```
+Help me research [Protocol Name] for bot development:
+- Main contracts and functions
+- API endpoints
+- Interaction patterns
+```
+
+## **🔧 Add Features**
+
+```
+Add [interaction type] to the framework:
+- What it does: [brief description]
+- Parameters needed: [list]
+- Success criteria: [how to measure]
+```
+
+```
+Integrate this contract: [address]
+Functions needed: [list main functions]
+Network: [network name]
+```
+
+## **🐛 Fix Issues**
+
+```
+Getting this error: [paste error]
+When: [which step]
+Help fix it.
+```
+
+```
+My [Protocol] bot has [X%] success rate.
+Common issues: [list problems]
+How to improve?
+```
+
+## **📊 Customize Display**
+
+```
+Add these metrics to results screen:
+- [metric 1]: [description]
+- [metric 2]: [description]
+
+Keep our emoji format.
+```
+
+```
+Want to track [specific data] over time.
+How to add analytics?
+```
+
+## **🔄 Update Framework**
+
+```
+The [Component] class needs improvement:
+Issue: [describe problem]
+Suggested fix: [your idea]
+```
+
+```
+Update framework to support [new feature].
+Should work with existing bots.
+```
+
+## **📚 Documentation**
+
+```
+Create setup guide for [Protocol] bot.
+Include: installation, config, troubleshooting.
+```
+
+```
+Need integration guide for [feature/protocol].
+Make it simple with code examples.
+```
+
+## **💡 Quick Help**
+
+```
+Review my code for framework compliance:
+[paste code section]
+```
+
+```
+Best way to handle [specific scenario] in our framework?
+```
+
+```
+Which approach for [Protocol]: [option A] or [option B]?
+```
+
+```
+How to make [Protocol-specific feature] work with our patterns?
+```
+
+These short starters get straight to the point while providing Claude with the essential context needed! 🎯
