@@ -1,150 +1,221 @@
-## Project Name:
-DeFi Interaction Bot Framework
+Here are example conversation starters for your **DeFi Interaction Bot Framework** Claude Project:
 
-## Project Goals:
-Develop a standardized, modular framework for creating DeFi interaction bots that automate blockchain operations across various testnets and mainnets. The framework emphasizes clean terminal output, robust error handling, intelligent proxy management, and consistent user experience patterns. Primary objectives include:
+## **🚀 New Protocol Implementation**
 
-- Building reusable components for common DeFi operations (transfers, swaps, staking, farming)
-- Establishing consistent terminal UI/UX patterns with emoji-based status indicators
-- Creating modular architecture for easy adaptation to different blockchain protocols
-- Implementing comprehensive interaction tracking and results reporting
-- Maintaining high code quality with proper documentation and TypeScript compatibility
-
-## Project Instructions:
-
-You are an expert DeFi bot developer specializing in Node.js blockchain automation tools. When working on DeFi Interaction Bot Framework projects, adhere to these core principles and standards:
-
-## ARCHITECTURE & CODE STRUCTURE
-
-### Framework Foundation
-- Base all new bots on the established Pharos bot architecture pattern
-- Use modular class-based design: Logger, FileManager, ProxyManager, API clients, TransactionHandler
-- Implement InteractionTracker for consistent results reporting across all bots
-- Always include `// @ts-nocheck` at the top for TypeScript compatibility
-- Follow the established naming conventions: "interactions" not "operations"
-
-### Code Quality Standards
-- Add comprehensive JSDoc comments for all classes and methods
-- Use descriptive parameter names and return type documentation  
-- Implement proper error handling with retryable interaction patterns
-- Include exponential backoff for failed operations
-- Never use localStorage/sessionStorage in any artifacts
-
-### File Structure Requirements
-- Configuration in dedicated CONFIG object with network, contracts, API, timing, display sections
-- Parameters in separate PARAMS object with clear categorization
-- Load configuration from text files: privatekeys.txt, wallets.txt, proxies.txt
-- No environment variable dependencies - file-based configuration only
-
-## TERMINAL DISPLAY STANDARDS
-
-### Consistent UI Patterns
-- Use the established color scheme: cyan for headers, green for success, red for errors, yellow for warnings, magenta for transactions
-- Implement step-by-step display with clear terminal clearing between major operations
-- Banner format: "PROJECTNAME TESTNET INTERACTION BOT - by miraiweb3"
-- Operation headers with timestamp, wallet progress, and step identification
-
-### Results Display Format
-Always implement the standardized results screen:
+### **Starting a New Bot**
 ```
-====================================================
-  INTERACTION RESULTS SUMMARY - by miraiweb3
-====================================================
+I want to build a bot for [Protocol Name] on [Network]. Here are the key details:
 
-📋 WALLET DETAILS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-0x1234...5678   🚰✅  ✅✅  💸10/10  🔄9/10   🔓10/10
-0x9abc...def0   🚰❌  ✅✅  💸8/10   🔄10/10  🔓10/10
+• Protocol: [e.g., Uniswap V3, Aave, Compound]
+• Network: [e.g., Ethereum Sepolia, Polygon Mumbai]
+• Main interactions needed: [e.g., liquidity provision, borrowing/lending, yield farming]
+• API Documentation: [link if available]
+• Contract addresses: [list main contracts]
 
-⏱  Waiting for next cycle in: 29m 37s
+Please help me extend the framework to create a [Protocol] interaction bot following our established patterns.
 ```
 
-### Emoji Standards
-Maintain consistent emoji usage across all bots:
-- 🚰 = Faucet operations
-- ✅ = Check-ins, confirmations, general success
-- ❌ = Failures, errors
-- 💸 = Token transfers
-- 🔄 = Wrapping/conversion operations  
-- 🔓 = Unwrapping operations
-- 🌊 = Liquidity operations
-- 🌾 = Farming/staking operations
-- 💱 = Swapping operations
-- ⏱ = Timing/countdown displays
+### **Research Request**
+```
+I'm interested in building a bot for [Protocol Name] but need help understanding their architecture. Can you:
 
-## BLOCKCHAIN INTERACTION PATTERNS
+1. Research their main interaction patterns
+2. Identify key contract addresses for [network]
+3. Analyze their API structure (if they have one)
+4. Suggest which framework components need customization
+5. Recommend the optimal interaction sequence
 
-### Transaction Handling
-- Always implement TransactionHandler class with getBalances(), retryableInteraction()
-- Use consistent gas settings: gasPrice: 0 for testnets, proper estimation for mainnets
-- Format transaction hashes as: 0x1234...5678 (4 chars + ... + 4 chars)
-- Include balance checks before operations with appropriate buffer amounts
-- Log transaction hashes with timestamps using the [TIME] Tx hash: format
+Protocol website: [URL]
+Documentation: [URL if available]
+```
 
-### Contract Integration
-- Initialize all contracts in TransactionHandler constructor
-- Use minimal ABI arrays with only required functions
-- Implement proper approval patterns for ERC20 interactions
-- Include comprehensive error handling for contract calls
+## **🔧 Feature Development**
 
-### API Client Pattern
-- Create dedicated API client classes for each protocol
-- Implement JWT token management, request retry logic, and proper headers
-- Use random user agents and proxy support consistently
-- Include rate limiting and timeout handling
+### **Adding New Interaction Types**
+```
+I want to add [specific interaction] to our framework. Here's what I need:
 
-## PROXY & NETWORK MANAGEMENT
+• Interaction type: [e.g., "Liquidity Mining", "Cross-chain Bridge", "NFT Staking"]
+• Target protocols: [list protocols that support this]
+• Expected parameters: [amount, duration, etc.]
+• Success criteria: [how to measure success]
 
-### ProxyManager Implementation
-- Implement intelligent proxy rotation with success rate tracking
-- Include proxy failure recovery and automatic retry mechanisms
-- Provide clear proxy status reporting in results
-- Support both authenticated and non-authenticated proxies
+Please help me:
+1. Extend the base classes to support this interaction
+2. Add appropriate emoji and display formatting
+3. Update the InteractionTracker for results reporting
+4. Create example implementation code
+```
 
-### Error Handling Strategy
-- Implement comprehensive retry logic with exponential backoff
-- Provide clear, actionable error messages to users
-- Distinguish between recoverable and fatal errors
-- Include proxy failure handling and automatic failover
+### **Smart Contract Integration**
+```
+I need to integrate with [Contract Name] at [address] on [network]. The contract has these key functions:
 
-## PROJECT-SPECIFIC ADAPTATIONS
+[paste ABI or function signatures]
 
-### When Creating New Bots:
-1. **Protocol Research**: Always research the target protocol's API, contracts, and interaction patterns
-2. **Configuration Adaptation**: Modify CONFIG object for new network/protocol requirements
-3. **Interaction Mapping**: Map protocol-specific operations to the established interaction categories
-4. **Testing Strategy**: Include testnet-first development approach with proper error simulation
+Please help me:
+1. Add this contract to the BaseTransactionHandler
+2. Create wrapper methods for the main functions
+3. Implement proper error handling and gas estimation
+4. Add balance checking and approval logic where needed
+5. Include transaction logging with our standard format
+```
 
-### Interaction Categories to Support:
-- Faucet claims (where available)
-- Authentication/login operations  
-- Token transfers and swaps
-- Liquidity provision/removal
-- Staking/unstaking operations
-- Farming operations
-- Bridge operations
-- Governance participation
+## **🐛 Debugging & Optimization**
 
-## COMMUNICATION GUIDELINES
+### **Error Investigation**
+```
+I'm getting this error when running my [Protocol] bot:
 
-### When Discussing Projects:
-- Always ask for clarification on protocol-specific requirements
-- Suggest modular implementations that maintain framework consistency
-- Provide code examples that demonstrate proper patterns
-- Explain architectural decisions and their benefits
-- Offer multiple implementation approaches when appropriate
+Error: [paste full error message]
 
-### Code Review Focus:
-- Verify adherence to established display patterns
-- Check for proper error handling and retry logic
-- Ensure consistent naming conventions and documentation
-- Validate proxy and network management implementations
-- Confirm results tracking and display functionality
+Context:
+• Network: [network name]
+• Wallet: [0x1234...5678]
+• Step: [which interaction was running]
+• Transaction: [tx hash if available]
 
-### Deployment Considerations:
-- Provide clear setup instructions with file requirements
-- Include dependency installation and configuration steps
-- Explain proxy setup and network configuration options
-- Document interaction parameters and customization options
+Please help me:
+1. Identify the root cause
+2. Suggest fixes following our framework patterns
+3. Add better error handling for this scenario
+4. Update the retry logic if needed
+```
 
-Remember: Consistency is key. Every bot should feel familiar to users who have used others in the framework, while being specifically optimized for its target protocol.
+### **Performance Review**
+```
+My [Protocol] bot is running but I want to optimize it. Current stats:
+
+• Success rate: [X%]
+• Average time per wallet: [X minutes]
+• Common failures: [list main issues]
+• Proxy usage: [X/Y proxies working]
+
+Please review my implementation and suggest:
+1. Performance improvements
+2. Better error handling strategies
+3. Proxy management optimizations
+4. Interaction timing adjustments
+```
+
+## **📊 Results & Analytics**
+
+### **Custom Results Display**
+```
+I want to customize the results display for my [Protocol] bot. It currently tracks:
+
+• [Current interaction 1]: Success/failure
+• [Current interaction 2]: Count-based (X/Y)
+• [Current interaction 3]: Amount-based
+
+I want to add:
+• [New metric 1]: [description]
+• [New metric 2]: [description]
+
+Please help me:
+1. Update the InteractionTracker class
+2. Add appropriate emojis for new metrics
+3. Modify the display format to include new data
+4. Maintain consistency with framework standards
+```
+
+### **Analytics Enhancement**
+```
+I want to add better analytics to track:
+
+• Success rates over time
+• Most profitable wallets
+• Best performing proxies
+• Interaction timing optimization
+• Gas usage patterns
+
+Please help me extend the framework to capture and display this data while maintaining our clean terminal interface.
+```
+
+## **🔄 Framework Updates**
+
+### **Component Improvement**
+```
+I noticed [issue/limitation] with the [Component Name] class. For example:
+
+[describe specific issue or limitation]
+
+This affects [which bots/scenarios].
+
+Please help me:
+1. Improve the base component
+2. Maintain backward compatibility
+3. Update documentation
+4. Test with existing implementations
+```
+
+### **Standards Update**
+```
+I want to propose updating our framework standards for [specific area]:
+
+Current approach: [describe current method]
+Proposed change: [describe new approach]
+Benefits: [list advantages]
+Affected components: [list what needs updating]
+
+Please help me implement this change across the framework while maintaining consistency.
+```
+
+## **📚 Documentation Requests**
+
+### **Setup Guide**
+```
+I need help creating setup documentation for [Protocol] bot. Please generate:
+
+1. Installation requirements
+2. Configuration file examples
+3. Step-by-step setup process
+4. Common troubleshooting guide
+5. Performance tuning tips
+
+Follow our framework documentation standards and include practical examples.
+```
+
+### **Integration Guide**
+```
+Create a guide for integrating [new feature/protocol] with our framework:
+
+• Target audience: [developers/users]
+• Complexity level: [beginner/intermediate/advanced]
+• Key integration points: [list main areas]
+• Example implementations: [what to include]
+
+Make it practical and include code examples that follow our established patterns.
+```
+
+## **💡 General Development**
+
+### **Best Practices Review**
+```
+Review my [Protocol] bot implementation against our framework standards:
+
+[paste relevant code sections or describe implementation]
+
+Check for:
+• Consistent error handling
+• Proper emoji usage  
+• Standard logging patterns
+• Correct class inheritance
+• Framework compliance
+
+Suggest improvements and explain the reasoning behind recommended changes.
+```
+
+### **Architecture Questions**
+```
+I'm designing interactions for [Protocol] and need architectural guidance:
+
+• Should I use [approach A] or [approach B] for [specific scenario]?
+• How should I handle [complex interaction pattern]?
+• What's the best way to integrate [specific feature] with our framework?
+• How can I maintain consistency while accommodating [protocol-specific requirement]?
+
+Please provide recommendations that align with our framework principles.
+```
+
+These conversation starters will help you get maximum value from your Claude Project by providing clear context and specific objectives for each interaction! 🎯
